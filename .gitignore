@@ -39,3 +39,4 @@ node_modules
 test.xunit
 
 package-lock.json
+version.json
