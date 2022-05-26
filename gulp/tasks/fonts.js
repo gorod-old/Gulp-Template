@@ -34,7 +34,7 @@ export const fontsStyle = () => {
     fs.readdir(app.path.build.fonts, function(err, fontsFiles) {
         if(fontsFiles) {
             if(!fs.existsSync(fontsFile)) {
-                fs.writeFile(fontsFile, '', cb);
+                fs.writeFile(fontsFile, '\n/*Fonts*/\n', cb);
                 let newFileOnly;
                 for(var i = 0; i < fontsFiles.length; i++) {
                     let fontFileName = fontsFiles[i].split('.')[0];
@@ -65,6 +65,7 @@ export const fontsStyle = () => {
                         newFileOnly = fontFileName;
                     }
                 } 
+                fs.appendFile(fontsFile, '\n/*--------------------Fonts*/\n', cb);
             }else {
                 console.log("File scss/fonts.scss already exists. For update delete this file!");   
             }

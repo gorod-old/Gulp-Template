@@ -1,7 +1,8 @@
-import configFTP from '../config/ftp.js';
+import {configFTP} from '../config/ftp.js';
 import vinylFTP from 'vinyl-ftp';
 import util from 'gulp-util';
-import { AutomaticPrefetchPlugin } from 'webpack';
+import pkg from 'webpack';
+const { AutomaticPrefetchPlugin } = pkg;
 
 export const ftp = () => {
     configFTP.log = util.log;
