@@ -1,3 +1,6 @@
+
+// Checking support by browser .WebP format for images and adding appropriate classes.
+
 export function isWebp() {
     // check browser webp support
     function testWebP(callback) {
